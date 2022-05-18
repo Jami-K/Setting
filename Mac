@@ -5,9 +5,10 @@ Rosetta2를 사용하여야만 호환성에서 문제가 발생하지 않습니�
 어플리케이션 > 기타 > 터미널
 복제 후, 설정에서 Rosetta2로 열리게 지정하여 사용
 
-""" EXE 파일 만들기 """
-pip install pyinstaller
-터미널에서 pyinstaller -w -F kkk.py
+""" 실행 바로가기 아이콘 만들기 """
+shell 파일을 만들어서 실행하여야함.
+source kkk.sh로 실행.
+kkk.sh 파일 내 제일 첫줄은 conda activate 가상환경명
 
 1. Xcode 설치
 반드시 developer.apple.com 홈페이지로 가서 다운받고 압축을 풀어서 설치할 것
