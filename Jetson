@@ -1,0 +1,34 @@
+1. 운영체제 설치
+Jetpack 설치 (developer.nvidia.com)
+BalenaEtcher로 SD카드에 설치
+
+2. Tensorflow
+Nvidia 홈페이지 내 DeepLearning 항목에 가면 Jetpack에 맞는 버전 확인하여 설치
+
+3. Pytorch
+위와 동일
+torch.__version__ >> 버전확인
+
+4. Torchvision
+sudo apt-get install libjpeg-dev zlib1g-dev
+git clone --branch v0.5.0 https://github.com/pytorch/vision torchvision
+cd torchvision
+export BUILD_VERSION=0.5.0
+sudo python setup.py install
+
+5. Pylon
+sudo apt-get install swig
+Basler 홈페이지에 들어가서 Linux_arm_64bit 소프트웨어 패키지 설치
+<< 카메라 IP설정 관련>>
+컴퓨터 192.168.dd.50   카메라 192.168.dd.1   게이트웨이 192.168.dd.100
+
+6. USB-Relay
+git clone https://github.com/jaketeater/Very-Simple-USB_Relay
+sudo apt-get install python-dev libusb-1.0-0-dev libudev-dev
+pip3 install --upgrade setuptools
+pip3 install hidapi
+sudo gedit /etc/udev/rules.d/99-usbrelay.rules
+SUBSYSTEM=="usb", ATTR{idVendor}=="16c0", ATTR{idProduct}=="05df", MODE="777"
+sudo udevadm control --reload-rule
+reboot
+
