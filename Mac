@@ -1,0 +1,44 @@
+""" M1 Chipset 기준입니다 """
+Rosetta2를 사용하여야만 호환성에서 문제가 발생하지 않습니다.
+
+""" Terminal 추가하기 """
+어플리케이션 > 기타 > 터미널
+복제 후, 설정에서 Rosetta2로 열리게 지정하여 사용
+
+""" EXE 파일 만들기 """
+pip install pyinstaller
+터미널에서 pyinstaller -w -F kkk.py
+
+1. Xcode 설치
+반드시 developer.apple.com 홈페이지로 가서 다운받고 압축을 풀어서 설치할 것
+(22.03.25 기준, version 13.2 설치하였음)
+  
+2. Homebrew 설치 (2종, brew / ibrew)
+(M1 버전)
+bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/<USER_ID>/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+(Intel 버전)
+arch --x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo "alias ibrew='arch -x86_64 /usr/local/bin/brew'" >> ~/.zshrc
+ 
+3. 가상환경 설정
+brew install -
+conda create -n tf python=3.8
+conda activate tf
+
+4. Pycharm 설치
+파이참 검색하여 Community 버전을 다운로드하고 실행하여 설치
+아이콘을 Applications에 Drag&Drop 하면 완료
+최초 실행 후, New Project를 선택 후에 Previously configured interpreter >> ... >> Conda Environment >> 가상환경이름
+
+5. Tensorflow 설치 (github.com/apple/tensorflow_macos)
+가상환경 구동
+pip install --upgrde pip
+pip install tensorflow-macos
+
+6. Pypylon 설치
+Basler 홈페이지에서 Pylon-viewer설치 (pylon소프트웨어 패키지)
+brew install swig
+패키지 설치 후에 git clone pypylon
+
