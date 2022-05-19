@@ -38,6 +38,11 @@ conda activate tf
 pip install --upgrde pip
 pip install tensorflow
 
+<Miniforge3 기준>
+conda install -c apple tensorflow-deps
+python -m pip install tensorflow-macos
+
+
 6. Pypylon 설치
 Basler 홈페이지에서 Pylon-viewer설치 (pylon소프트웨어 패키지)
 brew install swig
