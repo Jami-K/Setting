@@ -23,7 +23,6 @@ arch --x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homeb
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
 
-
 3. 가상환경 설정 (Conda Version 반드시 살펴볼것!- arm64)
 Anaconda3 홈페이지 가서 직접 다운로드하여 설치
 conda create -n tf python=3.8
