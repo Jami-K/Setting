@@ -23,7 +23,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 arch --x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo "alias ibrew='arch -x86_64 /usr/local/bin/brew'" >> ~/.zshrc
  
-3. 가상환경 설정
+3. 가상환경 설정 (Conda Version 반드시 살펴볼것!-)
 brew install -
 conda create -n tf python=3.8
 conda activate tf
@@ -36,11 +36,7 @@ conda activate tf
 5. Tensorflow 설치 (github.com/apple/tensorflow_macos)
 가상환경 구동
 pip install --upgrde pip
-pip install tensorflow
-
-<Miniforge3 기준>
-conda install -c apple tensorflow-deps
-python -m pip install tensorflow-macos
+pip install tensorflow-macos==2.8.0
 
 
 6. Pypylon 설치
