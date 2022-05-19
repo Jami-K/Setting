@@ -17,12 +17,13 @@ Shell Script 실행 >> source /pt/anaconda3/etc/profile.d/conda.sh >> conda acti
 2. Homebrew 설치 (2종, brew / ibrew)
 (M1 버전)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/<USER_ID>/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
 (Intel 버전)
 arch --x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo "alias ibrew='arch -x86_64 /usr/local/bin/brew'" >> ~/.zshrc
- 
+(~/.zshrc 내 삽입 문구)
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
+
+
 3. 가상환경 설정 (Conda Version 반드시 살펴볼것!- arm64)
 Anaconda3 홈페이지 가서 직접 다운로드하여 설치
 conda create -n tf python=3.8
@@ -38,10 +39,8 @@ conda activate tf
 pip install --upgrde pip
 pip install tensorflow-macos==2.8.0
 
-
 6. Pypylon 설치
 Basler 홈페이지에서 Pylon-viewer설치 (pylon소프트웨어 패키지)
 brew install swig
 git clone pypylon.git
 pip install .
-
