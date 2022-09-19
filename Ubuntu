@@ -17,6 +17,8 @@ Step4에서 cpu 코어수에 맞추어 진행하여야함. (grep -c processor /p
 마지막으로 sudo apt-get install libopencv-dev
 import cv2 >> print(cv2.__version__)
 
+pip3 install opencv-python도 가능함
+
 4. Darkent 설치 (AlexeyAB)
 git clone https://github.com/AlexeyAB/darknet.git
 Makefile할 때, 내용을 잘 읽고 설치할 것
