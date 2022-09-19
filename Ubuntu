@@ -13,8 +13,9 @@ watch nvidia-smi를 통해 설치 유무 및 GPU상태 모니터링 가능
 
 3. OpenCV4 설치
 https://www.learnopencv.com/install-opencv-4-on-ubuntu-18-04 가서 따라하면 됨
-Step4에서 cpu 코어수에 맞추어 진행하여야함.
+Step4에서 cpu 코어수에 맞추어 진행하여야함. (grep -c processor /proc/cpuinfo)
 마지막으로 sudo apt-get install libopencv-dev
+import cv2 >> print(cv2.__version__)
 
 4. Darkent 설치 (AlexeyAB)
 git clone https://github.com/AlexeyAB/darknet.git
