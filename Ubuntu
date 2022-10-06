@@ -5,10 +5,11 @@ Ubuntu 홈페이지 들어가서 16.04 버전으로 시동디스크(USB) 만들�
 2. CUDA 및 cuDNN 설치
 ubuntu-drivers devices
 sudo apt-get install nvidia-driver-460
+cat /proc/driver/nidia/version
 
 NVIDIA 3090 기준으로 11.1을 설치하였음
 https://developer.nvidia.com/cuda-toolkit-archive
-runfile이 괜찮았음
+nvcc -V
 
 gedit ~/.bashrc
 export PATH = /usr/local/cuda-11.1/bin${PATH:+:${PATH}}
