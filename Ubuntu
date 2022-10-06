@@ -19,7 +19,7 @@ https://developer.nvidia.com/cuda-toolkit-archive
 nvcc -V
 
 gedit ~/.bashrc
-export PATH = /usr/local/cuda-11.1/bin${PATH:+:${PATH}}
+export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 watch nvidia-smi를 통해 설치 유무 및 GPU상태 모니터링 가능
