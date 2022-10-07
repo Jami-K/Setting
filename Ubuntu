@@ -47,4 +47,5 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get autoremove
 sudo apt-get install python3-pip
+pip3 install --upgrade pip
 하고 나서 pip3 install로 필요하신 라이브러리 설치하여 사용하면 됨 (너무 많아서 미기술)
