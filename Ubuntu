@@ -51,6 +51,9 @@ pip3 install --upgrade pip
 하고 나서 pip3 install로 필요하신 라이브러리 설치하여 사용하면 됨 (너무 많아서 미기술)
 
 8. PYTHON 버전관리
+sudo update-alternatives --install <link> <name> <path> <priority>
+sudo update-alternatives --remove <name> <path>
+
 sudo update-alternatives --config python    # 파이썬 버전 변경
 
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1   #파이썬 
