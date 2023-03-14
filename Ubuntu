@@ -12,7 +12,9 @@ reboot
 
 ubuntu-drivers devices
 sudo apt-get install nvidia-driver-460
-cat /proc/driver/nidia/version
+cat /proc/driver/nvidia/version
+
+cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 NVIDIA 3090 기준으로 11.1을 설치하였음
 https://developer.nvidia.com/cuda-toolkit-archive
