@@ -3,24 +3,27 @@ Ubuntu 홈페이지 들어가서 16.04 버전으로 시동디스크(USB) 만들�
 설치 중 반드시 인터넷을 연결하여 진행할 것!!
 
 2. CUDA 및 cuDNN 설치
-sudo gedit /etc/modprobe.d/blacklist.conf
-blacklist nouveau
-blacklistlbm-nouveau
-
-sudo update-initramfs -u
-reboot
-
-
+'''
 ubuntu-drivers devices
 sudo apt-get install nvidia-driver-460
-cat /proc/driver/nvidia/version
 
-cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+sudo gedit /etc/modprobe.d/blacklist.conf
+blacklist nouveau
+blacklist lbm-nouveau
+sudo update-initramfs -u
+reboot
+'''
+>> 결국 우분투 자체에 있는 '추가 드라이버' 들어가서 설치하는 것이 제일 좋았음
 
-NVIDIA 3090 기준으로 11.1을 설치하였음
-https://developer.nvidia.com/cuda-toolkit-archive
-nvcc -V
+tar -xvf cudnn.tar.xz
+cp ./include/* /usr/local/cuda-11.1/include
+cp ./lib/* /usr/local/cuda-11.1/lib64
 
+버전확인: cat /proc/driver/nvidia/version
+버전확인: nvcc -v
+버전확인: cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+
+[CUDA 경로설정]
 gedit ~/.bashrc
 export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
