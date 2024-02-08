@@ -66,3 +66,14 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1  
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 3
 
+9. 바탕화면 바로가기 생성 관련
+(파일이름).desktop으로 파일을 생성
+/home/nongshim/.local/share/application/ 내부에 파일을 만들것
+Name=(파일이름)
+Exec=python3 (실행파일).py
+Path=/home/nongshim/~
+Terminal=true
+Icon=home/nongshim/~
+
+10. LOG를 통한 문제 해결방법: sudo tail -f /var/log/syslog
+
