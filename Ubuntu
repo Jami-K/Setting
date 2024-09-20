@@ -16,8 +16,8 @@ reboot
 >> 결국 우분투 자체에 있는 '추가 드라이버' 들어가서 설치하는 것이 제일 좋았음
 
 tar -xvf cudnn.tar.xz
-cp ./include/* /usr/local/cuda-11.1/include
-cp ./lib/* /usr/local/cuda-11.1/lib64
+cp -P ./include/* /usr/local/cuda-11.1/include
+cp -P ./lib/* /usr/local/cuda-11.1/lib64
 
 버전확인: cat /proc/driver/nvidia/version
 버전확인: nvcc -v
