@@ -2,6 +2,12 @@
 Ubuntu 홈페이지 들어가서 16.04 버전으로 시동디스크(USB) 만들어서 진행
 설치 중 반드시 인터넷을 연결하여 진행할 것!!
 
+* sudo권한 부여
+sudo gedit /etc/sudoers 또는 sudo visudo
+nongshim ALL=(ALL) NOPASSWD:ALL
+오타로 실수했다면 pkexec visudo 로 수정할 것.
+
+
 2. CUDA 및 cuDNN 설치
 '''
 ubuntu-drivers devices
