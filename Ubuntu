@@ -7,6 +7,11 @@ sudo gedit /etc/sudoers 또는 sudo visudo
 nongshim ALL=(ALL) NOPASSWD:ALL
 오타로 실수했다면 pkexec visudo 로 수정할 것.
 
+* 분석시스템 버전 확인
+Python 3.10.13
+Nvidia-driver 535.161.07
+CUDA 12.2
+cuDNN 8.9.4.25_cuda12
 
 2. CUDA 및 cuDNN 설치
 '''
