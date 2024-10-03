@@ -16,6 +16,7 @@ cuDNN 8.9.4.25_cuda12
 sudo apt update
 sudo apt install build-essential
 sudo apt install pkg-config libglvnd-dev
+sudo apt-get install python3.10
 
 2. CUDA 및 cuDNN 설치
 '''
