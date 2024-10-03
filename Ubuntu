@@ -14,8 +14,8 @@ CUDA 12.2
 cuDNN 8.9.4.25_cuda12
 
 sudo apt update
-sudo apt upgrade
 sudo apt install build-essential
+sudo apt install pkg-config libglvnd-dev
 
 2. CUDA 및 cuDNN 설치
 '''
