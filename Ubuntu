@@ -13,6 +13,10 @@ Nvidia-driver 535.161.07
 CUDA 12.2
 cuDNN 8.9.4.25_cuda12
 
+sudo apt update
+sudo apt upgrade
+sudo apt install build-essential
+
 2. CUDA 및 cuDNN 설치
 '''
 ubuntu-drivers devices
