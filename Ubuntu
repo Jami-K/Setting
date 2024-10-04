@@ -95,3 +95,9 @@ Icon=home/nongshim/~
 
 10. LOG를 통한 문제 해결방법: sudo tail -f /var/log/syslog
 
+11. Pylon
+sudo apt-get install swig
+Basler 홈페이지에 들어가서 Linux_arm_64bit 소프트웨어 패키지 설치 (dpkg -i 패키지명)
+sudo ufw disable  # 방화벽 종료하기, 카메라 감지 안될때 오류 해결법
+<< 카메라 IP설정 관련>>
+컴퓨터 192.168.dd.50   카메라 192.168.dd.1   게이트웨이 192.168.dd.100
