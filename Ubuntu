@@ -24,15 +24,15 @@ sudo apt-get install python3.10
 2. CUDA 및 cuDNN 설치
 sudo apt-get install linux-headers-$(uname -r)
 sudo ubuntu-drivers devices
-sudo apt-get install nvidia-driver-460 # recommended를 설치할 것
+sudo apt-get install nvidia-driver-460 # recommended를 설치함
 
-* 흑색화면 발생하였을때, 문제해결방법  # 자체 내장드라이버와 충동해서 발새함
+* 흑색화면 발생하였을때, 문제해결방법  # 자체 내장드라이버와 충돌해서 발생함
 sudo gedit /etc/modprobe.d/blacklist.conf
 blacklist nouveau
 blacklist lbm-nouveau
 sudo update-initramfs -u
 reboot
->> 결국 우분투 자체에 있는 '추가 드라이버' 들어가서 설치하는 것이 제일 좋았음
+>> 결국 우분투 자체에 있는 '추가 드라이버' 들어가서 설치하는 것이 제일 좋았음, 그냥 runfile 받아서 하는게 제일 편함
 
 tar -xvf cudnn.tar.xz
 cp -P ./include/* /usr/local/cuda-11.1/include
