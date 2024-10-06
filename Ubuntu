@@ -1,13 +1,12 @@
 1. Ubuntu 설치
-Ubuntu 홈페이지 들어가서 16.04 버전으로 시동디스크(USB) 만들어서 진행
-설치 중 반드시 인터넷을 연결하여 진행할 것!!
+Ubuntu 홈페이지 들어가서 20.04 버전으로 시동디스크(USB) 만들어서 진행, 설치 중 인터넷을 연결하여 진행하면 좋다
 
 * sudo권한 부여
 sudo gedit /etc/sudoers 또는 sudo visudo
 nongshim ALL=(ALL) NOPASSWD:ALL
 오타로 실수했다면 pkexec visudo 로 수정할 것.
 
-8 노트북 버전 확인 (RTX3060)
+* 노트북 버전 확인 (RTX3060)
 Python 3.8.10
 CUDA 11.8
 
@@ -23,16 +22,16 @@ sudo apt install pkg-config libglvnd-dev
 sudo apt-get install python3.10
 
 2. CUDA 및 cuDNN 설치
-'''
-ubuntu-drivers devices
-sudo apt-get install nvidia-driver-460
+sudo apt-get install linux-headers-$(uname -r)
+sudo ubuntu-drivers devices
+sudo apt-get install nvidia-driver-460 # recommended를 설치할 것
 
+* 흑색화면 발생하였을때, 문제해결방법  # 자체 내장드라이버와 충동해서 발새함
 sudo gedit /etc/modprobe.d/blacklist.conf
 blacklist nouveau
 blacklist lbm-nouveau
 sudo update-initramfs -u
 reboot
-'''
 >> 결국 우분투 자체에 있는 '추가 드라이버' 들어가서 설치하는 것이 제일 좋았음
 
 tar -xvf cudnn.tar.xz
@@ -48,7 +47,7 @@ gedit ~/.bashrc
 export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
-watch nvidia-smi를 통해 설치 유무 및 GPU상태 모니터링 가능
+watch nvidia-smi를 통해 설치 유무 및 GPU상태 모니터링 가능 (0.2s마다 갱신)
 
 3. OpenCV4 설치
 https://www.learnopencv.com/install-opencv-4-on-ubuntu-18-04 가서 따라하면 됨
@@ -56,8 +55,8 @@ Step4에서 cpu 코어수에 맞추어 진행하여야함. (grep -c processor /p
 마지막으로 sudo apt-get install libopencv-dev
 import cv2 >> print(cv2.__version__)
 
-https://webnautes.tistory.com/1186
-pip3 install opencv-python도 가능함
+https://webnautes.tistory.com/1186  # 이 방법이 확실히 쉬움
+pip3 install opencv-python
 pip3 install opencv-contrib-python
 
 4. Darkent 설치 (AlexeyAB)
@@ -67,7 +66,7 @@ Makefile할 때, 내용을 잘 읽고 설치할 것
 5. Yolo_Marking 관련
 AlexeyAB의 Yolo_mark.git 사용
 goddly4123의 Yolo_mark.git 사용
-알아서 골라사용하시오.
+알아서 골라 사용하시오.
 
 6. 각종 패키지 관련
 sudo apt-get update
@@ -102,6 +101,6 @@ Icon=home/nongshim/~
 11. Pylon
 sudo apt-get install swig
 Basler 홈페이지에 들어가서 Linux_arm_64bit 소프트웨어 패키지 설치 (dpkg -i 패키지명)
-sudo ufw disable  # 방화벽 종료하기, 카메라 감지 안될때 오류 해결법
+sudo ufw disable  # 방화벽 종료하기, 카메라 감지 안될때 오류 해결법, 보통 의미없음
 << 카메라 IP설정 관련>>
 컴퓨터 192.168.dd.100   카메라 192.168.dd.1   서브넷 255.255.255.0
