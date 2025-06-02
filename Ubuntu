@@ -9,12 +9,17 @@ nongshim ALL=(ALL) NOPASSWD:ALL
 * 노트북 버전 확인 (RTX3060)
 Python 3.8.10
 CUDA 11.8
+cuDNN 8.9.2
+torch 2.0.1+cu118
+opencv 4.10.0
 
 * 분석시스템 버전 확인 (RTX 4090 기준)
 Python 3.10.13
 Nvidia-driver 535.161.07
 CUDA 12.2
 cuDNN 8.9.4.25_cuda12
+torch 2.1.0
+opencv 4.8.1.78
 
 sudo apt update
 sudo apt install build-essential
@@ -32,7 +37,7 @@ blacklist nouveau
 blacklist lbm-nouveau
 sudo update-initramfs -u
 reboot
->> 결국 우분투 자체에 있는 '추가 드라이버' 들어가서 설치하는 것이 제일 좋았음, 그냥 runfile 받아서 하는게 제일 편함
+>> 결국 우분투 자체에 있는 '추가 드라이버' 들어가서 설치하는 것이 제일 좋았음 / 그냥 runfile 받아서 하는게 제일 편함
 
 tar -xvf cudnn.tar.xz
 cp -P ./include/* /usr/local/cuda-11.1/include
@@ -63,10 +68,9 @@ pip3 install opencv-contrib-python
 git clone https://github.com/AlexeyAB/darknet.git
 Makefile할 때, 내용을 잘 읽고 설치할 것
 
-5. Yolo_Marking 관련
+5. Yolo_Marking 알아서 골라 사용하시오.
 AlexeyAB의 Yolo_mark.git 사용
 goddly4123의 Yolo_mark.git 사용
-알아서 골라 사용하시오.
 
 6. 각종 패키지 관련
 sudo apt update
