@@ -1,3 +1,15 @@
+https://t-shaped-person.tistory.com/179  # Ubuntu 18.04
+https://t-shaped-person.tistory.com/24   # Ubuntu 20.04
+https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image?tab=readme-ov-file   # Image File 다운로드 경로
+
+* 버전 확인
+JetPack 4.6.1
+opencv 4.8.0
+torch 1.13.0
+
+
+""" 이하 예전 설치 자료입니다. """
+
 1. 운영체제 설치
 Jetpack 설치 (developer.nvidia.com)
 BalenaEtcher로 SD카드에 설치
