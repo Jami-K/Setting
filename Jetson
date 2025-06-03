@@ -1,6 +1,6 @@
 https://t-shaped-person.tistory.com/179  # Ubuntu 18.04
 https://t-shaped-person.tistory.com/24   # Ubuntu 20.04
-https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image?tab=readme-ov-file   # Image File 다운로드 경로 (8.7GB)
+https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image?tab=readme-ov-file   # Bare Image File 다운로드 경로 (5.6GB)
 
 * 버전 확인
 JetPack 4.6.1
@@ -10,7 +10,7 @@ torch 1.13.0
 Image File을 다운로드 받아서 microSD 에다가 설치해줘야 한다.
  - window 환경의 rufus 앱 사용함
  - ubuntu 환경의 balenaEtcher 앱을 사용시, Error (input/output)가 발생했음
-
+ - 8.7GB를 설치하니 "Failed to start ..." 오류가 발생하였음
 
 """ 이하 예전 설치 자료입니다. """
 
