@@ -101,6 +101,7 @@ Terminal=true
 Icon=home/nongshim/~
 
 10. LOG를 통한 문제 해결방법: sudo tail -f /var/log/syslog
+chmod +777 +R 
 
 11. Pylon
 sudo apt-get install swig
