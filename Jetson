@@ -12,6 +12,27 @@ Image File을 다운로드 받아서 microSD 에다가 설치해줘야 한다.
  - ubuntu 환경의 balenaEtcher 앱을 사용시, Error (input/output)가 발생했음
  - 8.7GB를 설치하니 "Failed to start ..." 오류가 발생하였음
 
+sudo apt get update
+sudo apt install python3-pip python3-tk
+pip3 install --upgrade pip
+pip3 install opencv-python==4.8.0.74
+pip3 install opencv-contrib-python==4.8.0.74
+
+sudo apt-get install libopenblas-base libopenmpi-dev libomp-dev
+pip3 install torch-1.13.0a0+d0d6b1f2.nv22.10-cp38-cp38-linux_aarch64.whl    # https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048
+sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libopenblas-dev libavcodec-dev libavformat-dev libswscale-dev
+git clone --branch v0.4.2 https://github.com/pytorch/vision torchvision
+cd torchvision
+export BUILD_VERSION=0.4.2
+python3 setup.py install --user
+cd ../ 
+
+sudo apt-get insatll swig
+sudo dpkg -i pylon_.deb # ARM 64bit
+
+sudo apt install git
+sudo git clone https://github.com/AlexeyAB/darknet.git
+
 """ 이하 예전 설치 자료입니다. """
 
 1. 운영체제 설치
