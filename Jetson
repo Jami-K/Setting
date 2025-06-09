@@ -1,6 +1,7 @@
 https://t-shaped-person.tistory.com/179  # Ubuntu 18.04
 https://t-shaped-person.tistory.com/24   # Ubuntu 20.04
 https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image?tab=readme-ov-file   # Bare Image File 다운로드 경로 (5.6GB)
+https://qengineering.eu/install-pytorch-on-jetson-nano.html
 
 * 버전 확인
 JetPack 4.6.1
