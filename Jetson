@@ -7,32 +7,52 @@ https://qengineering.eu/install-pytorch-on-jetson-nano.html
 JetPack 4.6.1
 opencv 4.8.0
 torch 1.13.0
+torchvision 0.14.0
+
+* ultralytics(YOLO11)은 Pytorch 1.18 이상 환경에서만 됨, 이미지분석시스템의 해당하는 코드를 지워야할 것 같음 (8.3.97이 실행된다는 기록이 있음)
+
 
 Image File을 다운로드 받아서 microSD 에다가 설치해줘야 한다.
  - window 환경의 rufus 앱 사용함
  - ubuntu 환경의 balenaEtcher 앱을 사용시, Error (input/output)가 발생했음
  - 8.7GB를 설치하니 "Failed to start ..." 오류가 발생하였음
 
-sudo apt get update
+# 환경 필수요소 설치하기
+sudo apt-get update
+sudo apt-get upgrade
 sudo apt install python3-pip python3-tk
 pip3 install --upgrade pip
 pip3 install opencv-python==4.8.0.74
 pip3 install opencv-contrib-python==4.8.0.74
 
-sudo apt-get install libopenblas-base libopenmpi-dev libomp-dev
-pip3 install torch-1.13.0a0+d0d6b1f2.nv22.10-cp38-cp38-linux_aarch64.whl    # https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048
-sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libopenblas-dev libavcodec-dev libavformat-dev libswscale-dev
-git clone --branch v0.4.2 https://github.com/pytorch/vision torchvision
-cd torchvision
-export BUILD_VERSION=0.4.2
-python3 setup.py install --user
-cd ../ 
+# PyTorch 1.13.0 설치하기
+sudo apt-get install libjpeg-dev libopenblas-dev libopenmpi-dev libomp-dev
+sudo -H pip3 install future
+sudo pip3 install -U --user wheel mock pillow
+sudo -H pip3 install testresources
+sudo -H pip3 install setuptools==58.3.0
+sudo -H pip3 install Cython
+sudo -H pip3 install gdown
+gdown https://drive.google.com/uc?id=1e9FDGt2zGS5C5Pms7wzHYRb0HuupngK1
+sudo -H pip3 install torch-1.13.0a0+git7c98e70-cp38-cp38-linux_aarch64.whl
+rm torch-1.13.0a0+git7c98e70-cp38-cp38-linux_aarch64.whl
 
+# TorchVision 0.14.0 설치하기
+sudo apt-get install zlib1g-dev libpython3-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
+gdown https://drive.google.com/uc?id=19UbYsKHhKnyeJ12VPUwcSvoxJaX7jQZ2
+sudo -H pip3 install torchvision-0.14.0a0+5ce4506-cp38-cp38-linux_aarch64.whl
+rm torchvision-0.14.0a0+5ce4506-cp38-cp38-linux_aarch64.whl 
+
+# PylonViewer 설치하기
 sudo apt-get insatll swig
 sudo dpkg -i pylon_.deb # ARM 64bit
 
+# Darknet 설치하기
 sudo apt install git
 sudo git clone https://github.com/AlexeyAB/darknet.git
+
+
 
 """ 이하 예전 설치 자료입니다. """
 
