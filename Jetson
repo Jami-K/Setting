@@ -6,8 +6,8 @@ https://qengineering.eu/install-pytorch-on-jetson-nano.html
 * 버전 확인
 JetPack 4.6.1
 opencv 4.8.0
-torch 1.13.0
-torchvision 0.14.0
+torch 1.12.0
+torchvision 0.12.0
 
 * ultralytics(YOLO11)은 Pytorch 1.18 이상 환경에서만 됨, 이미지분석시스템의 해당하는 코드를 지워야할 것 같음 (8.3.97이 실행된다는 기록이 있음)
 
@@ -25,7 +25,7 @@ pip3 install --upgrade pip
 pip3 install opencv-python==4.8.0.74
 pip3 install opencv-contrib-python==4.8.0.74
 
-# PyTorch 1.13.0 설치하기
+# PyTorch 1.12.0 설치하기
 sudo apt-get install libjpeg-dev libopenblas-dev libopenmpi-dev libomp-dev
 sudo -H pip3 install future
 sudo pip3 install -U --user wheel mock pillow
@@ -33,16 +33,16 @@ sudo -H pip3 install testresources
 sudo -H pip3 install setuptools==58.3.0
 sudo -H pip3 install Cython
 sudo -H pip3 install gdown
-gdown https://drive.google.com/uc?id=1e9FDGt2zGS5C5Pms7wzHYRb0HuupngK1
-sudo -H pip3 install torch-1.13.0a0+git7c98e70-cp38-cp38-linux_aarch64.whl
-rm torch-1.13.0a0+git7c98e70-cp38-cp38-linux_aarch64.whl
+gdown https://drive.google.com/uc?id=1MnVB7I4N8iVDAkogJO76CiQ2KRbyXH_e
+sudo -H pip3 install torch-1.12.0a0+git67ece03-cp38-cp38-linux_aarch64.whl
+rm torch-1.12.0a0+git67ece03-cp38-cp38-linux_aarch64.whl
 
-# TorchVision 0.14.0 설치하기
+# TorchVision 0.13.0 설치하기
 sudo apt-get install zlib1g-dev libpython3-dev
 sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
-gdown https://drive.google.com/uc?id=19UbYsKHhKnyeJ12VPUwcSvoxJaX7jQZ2
-sudo -H pip3 install torchvision-0.14.0a0+5ce4506-cp38-cp38-linux_aarch64.whl
-rm torchvision-0.14.0a0+5ce4506-cp38-cp38-linux_aarch64.whl 
+gdown https://drive.google.com/uc?id=11DPKcWzLjZa5kRXRodRJ3t9md0EMydhj
+sudo -H pip3 install torchvision-0.13.0a0+da3794e-cp38-cp38-linux_aarch64.whl
+rm torchvision-0.13.0a0+da3794e-cp38-cp38-linux_aarch64.whl
 
 # PylonViewer 설치하기
 sudo apt-get insatll swig
