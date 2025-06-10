@@ -3,13 +3,11 @@ https://t-shaped-person.tistory.com/24   # Ubuntu 20.04
 https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image?tab=readme-ov-file   # Bare Image File 다운로드 경로 (5.6GB)
 https://qengineering.eu/install-pytorch-on-jetson-nano.html
 
-* 버전 확인
+* 버전 확인용
 JetPack 4.6.1
 opencv 4.8.0
 torch 1.12.0
 torchvision 0.13.0
-
-* ultralytics(YOLO11)은 Pytorch 1.18 이상 환경에서만 됨, 이미지분석시스템의 해당하는 코드를 지워야할 것 같음 (8.3.97이 실행된다는 기록이 있음)
 
 
 Image File을 다운로드 받아서 microSD 에다가 설치해줘야 한다.
@@ -22,6 +20,15 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt install python3-pip python3-tk
 pip3 install --upgrade pip
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 70
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 50
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 70
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 50
+
+# OPENCV 설치하기
 pip3 install opencv-python==4.8.0.74
 pip3 install opencv-contrib-python==4.8.0.74
 
@@ -49,21 +56,19 @@ sudo apt-get insatll swig
 sudo dpkg -i pylon_.deb # ARM 64bit
 
 # Darknet 설치하기
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo apt-get update
-
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 70
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 50
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 70
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 50
-
 sudo apt install git
 sudo git clone https://github.com/AlexeyAB/darknet.git
 Makefile 내부 수정 (GPU, CUDNN, CUDNN_HALF, OPENCV, OPENMP, LIBSO /  ARCH=53_compute  / NVCC=/usr/local/cuda/bin/nvcc)
 
 # 이미지분석시스템 실행하기
+# 반드시 require_jetson.txt를 다운받아서 사용하세요
+# libdarknet.so는 ./modelAI/ 폴더 내부로 복사하여 붙여넣으세요
+sudo apt-get install python3-pil.imagetk
 cd ImageAnalysis
-pip3 install -r requirement.txt
+pip3 install -r require_jetson.txt
+python3 main.py        # 실행코드
+
+
 
 
 
