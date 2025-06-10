@@ -7,7 +7,7 @@ https://qengineering.eu/install-pytorch-on-jetson-nano.html
 JetPack 4.6.1
 opencv 4.8.0
 torch 1.12.0
-torchvision 0.12.0
+torchvision 0.13.0
 
 * ultralytics(YOLO11)은 Pytorch 1.18 이상 환경에서만 됨, 이미지분석시스템의 해당하는 코드를 지워야할 것 같음 (8.3.97이 실행된다는 기록이 있음)
 
