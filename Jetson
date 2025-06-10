@@ -51,6 +51,7 @@ sudo dpkg -i pylon_.deb # ARM 64bit
 # Darknet 설치하기
 sudo apt install git
 sudo git clone https://github.com/AlexeyAB/darknet.git
+Makefile 내부 수정 (GPU, CUDNN, CUDNN_HALF, OPENCV, OPENMP, LIBSO /  ARCH=53_compute  / NVCC=/usr/local/cuda/bin/nvcc)
 
 
 
