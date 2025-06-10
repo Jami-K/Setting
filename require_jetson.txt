@@ -1,0 +1,8 @@
+Pillow==10.4.0
+pypylon==3.0.1
+hidapi==0.14.0
+ultralytics==8.1.19
+easyocr==1.7.1
+schedule==1.2.1
+v4l2-python3==0.3.3
+tqdm==4.66.1
