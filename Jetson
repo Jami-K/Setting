@@ -49,15 +49,28 @@ sudo apt-get insatll swig
 sudo dpkg -i pylon_.deb # ARM 64bit
 
 # Darknet 설치하기
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 70
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 50
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 70
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 50
+
 sudo apt install git
 sudo git clone https://github.com/AlexeyAB/darknet.git
 Makefile 내부 수정 (GPU, CUDNN, CUDNN_HALF, OPENCV, OPENMP, LIBSO /  ARCH=53_compute  / NVCC=/usr/local/cuda/bin/nvcc)
 
 # 이미지분석시스템 실행하기
-cd 
+cd ImageAnalysis
+pip3 install -r requirement.txt
+
+
+
+
+
 
 """ 이하 예전 설치 자료입니다. """
-
 1. 운영체제 설치
 Jetpack 설치 (developer.nvidia.com)
 BalenaEtcher로 SD카드에 설치
