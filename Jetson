@@ -1,6 +1,8 @@
+* 참고용 웹사이트
 https://t-shaped-person.tistory.com/179  # Ubuntu 18.04
 https://t-shaped-person.tistory.com/24   # Ubuntu 20.04
-https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image?tab=readme-ov-file   # Bare Image File 다운로드 경로 (5.6GB)
+https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image?tab=readme-ov-file   # Ubuntu 20.04 Image File에 대한 정보가 적혀 있음
+https://ln5.sync.com/dl/7261d3770/jebr2z9k-kwj4wwvd-3wxjtqsx-36zbu3cx/view/default/11304887590004    # Bare Image File 다운로드 경로 (5.6GB)
 https://qengineering.eu/install-pytorch-on-jetson-nano.html
 
 * 버전 확인용
@@ -23,7 +25,7 @@ pip3 install --upgrade pip
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
 
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 70
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 70   # gcc버전을 낮추어야 darknet이 설치될 수 있음
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 50
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 70
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 50
@@ -51,7 +53,7 @@ gdown https://drive.google.com/uc?id=11DPKcWzLjZa5kRXRodRJ3t9md0EMydhj
 sudo -H pip3 install torchvision-0.13.0a0+da3794e-cp38-cp38-linux_aarch64.whl
 rm torchvision-0.13.0a0+da3794e-cp38-cp38-linux_aarch64.whl
 
-# PylonViewer 설치하기
+# PylonViewer 설치하기 (basler 홈페이지에서 다운로드 받으세요)
 sudo apt-get insatll swig
 sudo dpkg -i pylon_.deb # ARM 64bit
 
