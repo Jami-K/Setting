@@ -6,3 +6,5 @@ easyocr==1.7.1
 schedule==1.2.1
 v4l2-python3==0.3.3
 tqdm==4.66.1
+PyYAML==6.0.1
+pynvml==11.5.3
