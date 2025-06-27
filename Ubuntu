@@ -105,7 +105,7 @@ sudo ufw disable  # 방화벽 종료하기, 카메라 감지 안될때 오류 �
 * Trouble Shooting  // 대원칙(KISS) : Keep it simple stupid!
 1. LOG를 통한 문제 해결방법: sudo tail -f /var/log/syslog
 
-2. 권한 문제 : chmod +777 +R   # 폴더 내부까지 다 해결됨
+2. 권한 문제 : chmod +777 -R   # 폴더 내부까지 다 해결됨
 
 3. USB 일부만 복사되는 문제 : iostat   # 내부의 kb_wrtn의 값이 있다면 아직 쓰기 작업 중에 있음 / 리눅스 커널 내부의 캐쉬가 메모리 안에 존재함
 
