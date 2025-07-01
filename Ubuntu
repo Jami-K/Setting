@@ -41,7 +41,7 @@ cp -P ./lib/* /usr/local/cuda-11.1/lib64
 버전확인: cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 [CUDA 경로설정]
-gedit ~/.bashrc
+gedit ~/.bashrc  # 24.04부터 gnome-text-editor
 export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
