@@ -9,8 +9,8 @@ nongshim ALL=(ALL) NOPASSWD:ALL
 * 노트북 버전 확인 (RTX3060 Mobile)  # Ubuntu 24.04 (25.07.01~)
 Python 3.12.3
 CUDA 12.2.2
+cuDNN 8.9.7.29_cuda12
 
-cuDNN 8.9.2
 torch 2.0.1+cu118
 opencv 4.10.0
 
