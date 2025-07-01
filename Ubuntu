@@ -6,9 +6,10 @@ sudo gedit /etc/sudoers 또는 sudo visudo
 nongshim ALL=(ALL) NOPASSWD:ALL
 오타로 실수했다면 pkexec visudo 로 수정할 것.
 
-* 노트북 버전 확인 (RTX3060)
-Python 3.8.10
-CUDA 11.8
+* 노트북 버전 확인 (RTX3060 Mobile)  # Ubuntu 24.04 (25.07.01~)
+Python 3.12.3
+CUDA 12.2.2
+
 cuDNN 8.9.2
 torch 2.0.1+cu118
 opencv 4.10.0
@@ -120,3 +121,9 @@ reboot
 
 
 
+* 노트북 버전 확인 (RTX3060)  # Ubuntu 20.04 (~25.06.30)
+Python 3.8.10
+CUDA 11.8
+cuDNN 8.9.2
+torch 2.0.1+cu118
+opencv 4.10.0
